@@ -260,6 +260,9 @@
   .my-30 {
     margin-block: calc(var(--spacing) * 30);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
