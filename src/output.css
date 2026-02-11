@@ -1465,6 +1465,16 @@
       height: calc(var(--spacing) * 15);
     }
   }
+  .lg\:w-1 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 1);
+    }
+  }
+  .lg\:w-1\/2 {
+    @media (width >= 64rem) {
+      width: calc(1/2 * 100%);
+    }
+  }
   .lg\:w-6 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 6);
