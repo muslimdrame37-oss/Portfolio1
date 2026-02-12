@@ -12,6 +12,34 @@
     
     <!-- Styles -->
     <link href="./output.css" rel="stylesheet">
+
+    <style>
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px);
+            transition: max-height 200ms ease, opacity 200ms ease, transform 200ms ease;
+        }
+
+        .mobile-menu.is-open {
+            max-height: 320px;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .menu-overlay {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 200ms ease;
+        }
+
+        .menu-overlay.is-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
     
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/31ee52f68e.js" crossorigin="anonymous"></script>
