@@ -40,8 +40,8 @@
         <div id="menu-overlay" class="lg:hidden menu-overlay fixed inset-0 bg-black/50" aria-hidden="true"></div>
         <nav id="mobile-menu" class="lg:hidden mobile-menu absolute top-full left-0 w-full bg-[#0A0A0A] border-t border-[#484848]" aria-label="Navigation mobile" aria-hidden="true">
             <ul class="flex flex-col gap-6 py-6 px-5 text-[#C7C7C7] text-[1.1rem]">
-                <li><a href="index.html" class="hover:text-[#D3E97A] transition-colors">Accueil</a></li>
-                <li><a href="a_propos.html" class="hover:text-[#D3E97A] transition-colors">À propos</a></li>
+                <li><a href="index.html" class="hover:text-[#D3E97A] transition-colors">Projets</a></li>
+                <li><a href="a_propos.html" class="hover:text-[#D3E97A] transition-colors">A propos</a></li>
                 <li><a href="#contact" class="hover:text-[#D3E97A] transition-colors">Contact</a></li>
             </ul>
         </nav>
@@ -202,7 +202,7 @@
 
         <!-- PROJET 3 -->
 
-        <section class="mt-20 flex flex-col px-8 gap-8 lg:gap-10 lg:flex-row lg:px-30 items-center">
+        <section class="mt-20 flex flex-col px-8 gap-8 lg:gap-10 lg:flex-row lg:px-20 items-center">
             <img src="image/image3.png" alt="" class="lg:w-1/2">
             <div class="lg:w-1/2 flex flex-col gap-2">
                 <div class="flex flex-col gap-5">
@@ -252,7 +252,7 @@
         <!-- À PROPOS DE MOI -->
         <div class="w-full border-[#484848] border my-10"></div>
 
-        <section class=" flex flex-col px-8 gap-5 lg:flex-row lg:gap-10 lg:px-30 justify-between">
+        <section class=" flex flex-col px-8 gap-5 lg:flex-row lg:gap-10 lg:px-20 justify-between">
             <div class="text-6xl text-white lg:w-1/2 lg:text-8xl font-bebas">À PROPOS DE MOI</div>
             <div class="lg:w-1/2">
                 <div class="flex flex-col gap-10 ">
@@ -268,7 +268,7 @@
 
         <!-- ========== SECTION CONTACT ========== -->
 
-        <section id="contact" class="flex flex-col px-8 mb-10 lg:px-30 lg:gap-10 lg:flex-row" aria-label="Formulaire de contact">
+        <section id="contact" class="flex flex-col px-8 mb-10 lg:px-20 lg:gap-10 lg:flex-row" aria-label="Formulaire de contact">
             <!-- Informations de contact -->
             <div class="flex flex-col gap-10 lg:w-1/2">
                 <h2 class="lg:text-7xl text-white text-4xl font-bebas">ENTRONS EN CONTACT</h2>
@@ -313,7 +313,7 @@
                     <label for="message" class="text-[#C7C7C7] text-[1.5rem]">Message</label>
                     <textarea name="message" id="message" rows="6" placeholder="Votre message..." class="text-[#C7C7C7] bg-[#1A1A1A] px-6 py-2 rounded-lg text-[1.5rem] resize-none focus:outline-none focus:ring-2 focus:ring-[#D3E97A] transition-all" required></textarea>
                 </div>
-                <button type="submit" class="text-black bg-[#D3E97A] py-2 lg:py-4 text-[1rem] font-bold rounded-[100px] w-35 hover:bg-[#c5db6f] transition-colors cursor-pointer">Envoyer</button>
+                <button type="submit" class="text-black bg-[#D3E97A] py-2 lg:py-4 text-[1rem] font-bold rounded-[100px] w-36 hover:bg-[#c5db6f] transition-colors cursor-pointer">Envoyer</button>
             </form>
         </section>
     </main>
@@ -345,7 +345,52 @@
         </div>
     </footer>
 
-    <script src="./main.js"></script>
+    <script>
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuOverlay = document.getElementById("menu-overlay");
+
+        if (menuButton && mobileMenu && menuOverlay) {
+            const closeMenu = () => {
+                mobileMenu.classList.remove("is-open");
+                mobileMenu.setAttribute("aria-hidden", "true");
+                menuOverlay.classList.remove("is-open");
+                menuOverlay.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("overflow-hidden");
+                menuButton.setAttribute("aria-expanded", "false");
+            };
+
+            const openMenu = () => {
+                mobileMenu.classList.add("is-open");
+                mobileMenu.setAttribute("aria-hidden", "false");
+                menuOverlay.classList.add("is-open");
+                menuOverlay.setAttribute("aria-hidden", "false");
+                document.body.classList.add("overflow-hidden");
+                menuButton.setAttribute("aria-expanded", "true");
+            };
+
+            menuButton.addEventListener("click", () => {
+                const isOpen = mobileMenu.classList.contains("is-open");
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            mobileMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", closeMenu);
+            });
+
+            menuOverlay.addEventListener("click", closeMenu);
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>

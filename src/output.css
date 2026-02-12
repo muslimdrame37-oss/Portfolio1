@@ -63,6 +63,7 @@
     --font-weight-normal: 400;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
+    --leading-tight: 1.25;
     --radius-sm: 0.25rem;
     --radius-lg: 0.5rem;
     --radius-2xl: 1rem;
@@ -494,6 +495,9 @@
   }
   .w-35 {
     width: calc(var(--spacing) * 35);
+  }
+  .w-36 {
+    width: calc(var(--spacing) * 36);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -1161,6 +1165,14 @@
     --tw-leading: calc(var(--spacing) * 40);
     line-height: calc(var(--spacing) * 40);
   }
+  .leading-\[1\.1\] {
+    --tw-leading: 1.1;
+    line-height: 1.1;
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -1537,6 +1549,11 @@
       height: calc(var(--spacing) * 12);
     }
   }
+  .lg\:h-14 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 14);
+    }
+  }
   .lg\:h-15 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 15);
@@ -1565,6 +1582,11 @@
   .lg\:w-12 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 12);
+    }
+  }
+  .lg\:w-14 {
+    @media (width >= 64rem) {
+      width: calc(var(--spacing) * 14);
     }
   }
   .lg\:w-15 {
@@ -2044,6 +2066,18 @@
     @media (width >= 64rem) {
       --tw-leading: calc(var(--spacing) * 30);
       line-height: calc(var(--spacing) * 30);
+    }
+  }
+  .lg\:leading-\[1\] {
+    @media (width >= 64rem) {
+      --tw-leading: 1;
+      line-height: 1;
+    }
+  }
+  .lg\:leading-none {
+    @media (width >= 64rem) {
+      --tw-leading: 1;
+      line-height: 1;
     }
   }
   .lg\:font-bold {

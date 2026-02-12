@@ -11,16 +11,15 @@
   <script src="https://kit.fontawesome.com/31ee52f68e.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-[#0A0A0A]">
-    <!-- ========== HEADER ========== -->
     <header class="flex items-center justify-between py-4 px-5 lg:px-20 relative">
         <h1 class="text-[#C7C7C7] text-[2rem] lg:text-4xl font-bebas">MUSLIM DRAME</h1>
-        
+
         <!-- Navigation Desktop -->
         <nav class="hidden lg:flex justify-between py-8 text-[#C7C7C7] text-[1.2rem]" aria-label="Navigation principale">
             <ul class="flex gap-10">
                 <li><a href="index.html" class="hover:text-[#D3E97A] transition-colors">Projets</a></li>
                 <li><a href="a_propos.html" class="hover:text-[#D3E97A] transition-colors">À propos</a></li>
-                <li><a href="index.html#contact" class="hover:text-[#D3E97A] transition-colors">Contact</a></li>
+                <li><a href="#contact" class="hover:text-[#D3E97A] transition-colors">Contact</a></li>
             </ul>
         </nav>
 
@@ -33,14 +32,13 @@
         <div id="menu-overlay" class="lg:hidden menu-overlay fixed inset-0 bg-black/50" aria-hidden="true"></div>
         <nav id="mobile-menu" class="lg:hidden mobile-menu absolute top-full left-0 w-full bg-[#0A0A0A] border-t border-[#484848]" aria-label="Navigation mobile" aria-hidden="true">
             <ul class="flex flex-col gap-6 py-6 px-5 text-[#C7C7C7] text-[1.1rem]">
-                <li><a href="index.html" class="hover:text-[#D3E97A] transition-colors">Accueil</a></li>
+                <li><a href="index.html" class="hover:text-[#D3E97A] transition-colors">Projets</a></li>
                 <li><a href="a_propos.html" class="hover:text-[#D3E97A] transition-colors">À propos</a></li>
-                <li><a href="index.html#contact" class="hover:text-[#D3E97A] transition-colors">Contact</a></li>
+                <li><a href="#contact" class="hover:text-[#D3E97A] transition-colors">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- ========== MAIN CONTENT ========== -->
     <main>
         <!-- À PROPOS DE MOI -->
          
@@ -69,13 +67,13 @@
             </div>
         </section>
 
-        <section class="bg-[#C7C7C7] rounded-2xl mx-8 flex flex- items-center justify-center lg:my-20 lg:mx-30 overflow-hidden">
-            <img src="image/image5.png">
+        <section class="bg-[#C7C7C7] rounded-2xl mx-8 flex items-center justify-center lg:my-20 lg:mx-20 overflow-hidden">
+            <img src="image/image5.png" alt="Portrait de Muslim Drame" class="w-full h-auto">
         </section>
 
         <!-- MES COMPÉTENCES -->
 
-        <div class="lg:px-30 flex flex-col px-8 gap-10 py-10 lg:py-20 lg:flex-row">
+        <div class="lg:px-20 flex flex-col px-8 gap-10 py-10 lg:py-20 lg:flex-row">
             <h2 class="text-white text-5xl font-bebas lg:w-1/2 lg:text-8xl">MES COMPÉTENCES</h2>
             <div class="lg:w-1/2 flex flex-col gap-10">
                 <P class="text-[#C7C7C7] text-[1.2rem]">Je suis toujours à la recherche de nouvelles compétences à développer. J’aime relever de nouveaux défis, apprendre des technologies variées et enrichir continuellement mon savoir-faire pour proposer des solutions modernes et efficaces</P>
@@ -95,7 +93,7 @@
 
         <!-- MON EXPÉRIENCE -->
 
-        <section class="lg:px-30 flex flex-col px-8 my-20 gap-10 lg:flex-row">
+        <section class="lg:px-20 flex flex-col px-8 my-20 gap-10 lg:flex-row">
             <div class="text-white text-5xl font-bebas lg:w-1/2 lg:text-8xl">MON EXPÉRIENCE</div>
             <div class="lg:w-1/2 flex flex-col gap-10">
                 <div class=" flex flex-col gap-5">
@@ -125,7 +123,7 @@
 
         <!-- ENTRONS EN CONTACT -->
 
-        <section class="flex flex-col px-8 py-20 lg:px-30 lg:gap-10 lg:flex-row">
+        <section id="contact" class="flex flex-col px-8 py-20 lg:px-20 lg:gap-10 lg:flex-row">
             <div class="flex flex-col gap-10 lg:w-1/2">
                 <div class="lg:text-7xl text-white font-bebas text-5xl">ENTRONS EN CONTACT</div>
                 <div class="flex flex-col">
@@ -174,7 +172,7 @@
         </section>
     </main>
     
-    <!-- ========== FOOTER ========== -->
+    <!-- FOOTER -->
     <footer class="w-full pb-6">
         <div class="mx-auto flex flex-col lg:flex-row gap-2 lg:gap-8 items-center justify-between border border-white/10 bg-[#1A1A1A] px-6 py-4 text-sm text-[#C7C7C7] backdrop-blur-md">
 
@@ -201,7 +199,53 @@
             </nav>
         </div>
     </footer>
-
-    <script src="./main.js"></script>
 </body>
+
+<script>
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("menu-overlay");
+
+    if (menuButton && mobileMenu && menuOverlay) {
+        const closeMenu = () => {
+            mobileMenu.classList.remove("is-open");
+            mobileMenu.setAttribute("aria-hidden", "true");
+            menuOverlay.classList.remove("is-open");
+            menuOverlay.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("overflow-hidden");
+            menuButton.setAttribute("aria-expanded", "false");
+        };
+
+        const openMenu = () => {
+            mobileMenu.classList.add("is-open");
+            mobileMenu.setAttribute("aria-hidden", "false");
+            menuOverlay.classList.add("is-open");
+            menuOverlay.setAttribute("aria-hidden", "false");
+            document.body.classList.add("overflow-hidden");
+            menuButton.setAttribute("aria-expanded", "true");
+        };
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.contains("is-open");
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        menuOverlay.addEventListener("click", closeMenu);
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+    }
+</script>
+
 </html>
