@@ -32,7 +32,7 @@
         </nav>
         
         <!-- Menu Mobile -->
-        <button class="lg:hidden"  id="mobile-menu-button">
+        <button class="lg:hidden"  aria-controls="mobile-menu" id="mobile-menu-button">
             <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#484848">
                 <path d="M120-680v-80h720v80H120Zm0 480v-80h720v80H120Zm0-240v-80h720v80H120Z"/>
             </svg>
@@ -300,19 +300,19 @@
             <form action="" method="POST" class="mt-10 flex w-full flex-col gap-5 lg:mt-0 lg:w-1/2">
                 <div class="flex flex-col gap-3">
                     <label for="name" class="text-[#C7C7C7] text-[1.5rem]">Nom complet</label>
-                    <input class="rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" type="text" name="name" placeholder="Muslim" id="name" required>
+                    <input class="rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1.5rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" type="text" name="name" placeholder="Muslim" id="name" required>
                 </div>
                 <div class="flex flex-col gap-3">
                     <label for="email" class="text-[#C7C7C7] text-[1.5rem]">Email</label>
-                    <input class="rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" type="email" name="email" placeholder="votre@email.com" id="email" required>
+                    <input class="rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1.5rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" type="email" name="email" placeholder="votre@email.com" id="email" required>
                 </div>
                 <div class="flex flex-col gap-3">
                     <label for="sujet" class="text-[#C7C7C7] text-[1.5rem]">Sujet</label>
-                    <input class="rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" type="text" name="sujet" placeholder="Sujet de votre message" id="sujet" required>
+                    <input class="rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1.5rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" type="text" name="sujet" placeholder="Sujet de votre message" id="sujet" required>
                 </div>
                 <div class="flex flex-col gap-3">
                     <label for="message" class="text-[#C7C7C7] text-[1.5rem]">Message</label>
-                    <textarea name="message" id="message" rows="6" placeholder="Votre message..." class="resize-none rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" required></textarea>
+                    <textarea name="message" id="message" rows="6" placeholder="Votre message..." class="resize-none rounded-lg bg-[#1A1A1A] px-6 py-2 text-[1.5rem] text-[#C7C7C7] transition-all focus:outline-none focus:ring-2 focus:ring-[#D3E97A]" required></textarea>
                 </div>
                 <button type="submit" class="w-35 cursor-pointer rounded-[100px] bg-[#D3E97A] py-2 text-[1rem] font-bold text-black transition-colors hover:bg-[#c5db6f] lg:py-4">Envoyer</button>
             </form>
